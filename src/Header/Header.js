@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.css';
 
 export default class CreatureHeader extends React.Component {
     render() {

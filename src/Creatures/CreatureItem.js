@@ -14,6 +14,4 @@ class CreatureItem extends React.Component {
 
 }
 
-// key={this.keyword}
-
 export default CreatureItem;

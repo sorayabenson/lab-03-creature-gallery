@@ -3,7 +3,6 @@ import React from 'react';
 import creaturesArray from './data.js';
 import CreatureHeader from './Header/Header.js';
 import CreatureList from './Creatures/CreatureList.js';
-import { render } from '@testing-library/react';
 
 export default class App extends React.Component {
   state = {
@@ -34,6 +33,7 @@ export default class App extends React.Component {
               <form className="creatureForm">
                 pick some cuties
                 <select
+                  className="creatureSelect"
                   value={this.state.keyword}
                   onChange={(e) => {
                     this.setState({
