@@ -1,0 +1,23 @@
+.creatureWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.creatureLi {
+    width: 200px;
+    height: 300px;
+    border: black solid 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 15px;
+}
+
+.creatureLi img {
+    width: 100px;
+    height: auto;
+}
