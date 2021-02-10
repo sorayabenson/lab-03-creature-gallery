@@ -1,19 +1,18 @@
 import React from 'react';
 import CreatureItem from './CreatureItem.js';
-import creaturesArray from '../data.js';
 import './Creatures.css';
 
 class CreatureList extends React.Component {
     
     render() {
 
-        const CreatureWrapper = creaturesArray.map(
+        const CreatureWrapper = this.props.filteredCreatures.map( //eslint-disable-line
             creature => <CreatureItem 
-                key={creature.keyword}
+                key={creature.title}
                 creatureProp={creature} />)
         
         return ( 
-            <ul 
+            <ul
             className="creatureWrapper">
                 {CreatureWrapper}
             </ul>
