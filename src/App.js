@@ -7,12 +7,30 @@ import CreatureList from './Creatures/CreatureList.js';
 export default class App extends React.Component {
   state = {
     keyword: '',
+    horns: '',
   }
 
   render() {
     const filteredCreatures = creaturesArray.filter((creature) => {
-      if (!this.state.keyword) return true;
-      if (creature.keyword === this.state.keyword) return true;
+      
+      // if no keyword or horns are selected
+      if (!this.state.keyword && !this.state.horns) return true;
+
+      // if there is a keyword selected but no horns 
+      if (this.state.keyword && !this.state.horns) {
+        if (creature.keyword === this.state.keyword) return true;
+      }
+
+      // if there is horns selected but no keyword
+      if (this.state.horns && !this.state.keyword) {
+        if (creature.horns === this.state.horns) return true;
+      }
+
+      // if there is both keyword and horns selected
+      if (this.state.keyword && this.state.horns) {
+        if (creature.keyword === this.state.keyword && creature.horns === this.state.horns) return true;
+      }
+
       return false;
     });
   
@@ -31,7 +49,7 @@ export default class App extends React.Component {
 
           <div className="creatureFilter">
               <form className="creatureForm">
-                pick some cuties
+                pick some cuties:
                 <select
                   className="creatureSelect"
                   value={this.state.keyword}
@@ -54,6 +72,24 @@ export default class App extends React.Component {
                   <option value="unicorn">unicorn</option>
                   <option value="unilego">unilego</option>
                 </select>
+
+                # of horns:
+                <select
+                  className="creatureSelect"
+                  value={this.state.horns}
+                  onChange={(e) => {
+                    this.setState({
+                      horns: Number(e.target.value)
+                    })
+                  }}
+                >
+                  <option value="">all</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="100">100</option>
+                </select>
+
               </form>
 
           </div>
