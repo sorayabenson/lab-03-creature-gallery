@@ -1,0 +1,13 @@
+.creatureForm {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .creatureSelect {
+    margin: 15px;
+    height: 25px;
+    border: black 3px solid;
+    border-radius: 3px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }

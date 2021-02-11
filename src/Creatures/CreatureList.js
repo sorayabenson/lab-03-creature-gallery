@@ -6,7 +6,7 @@ class CreatureList extends React.Component {
     
     render() {
 
-        const CreatureWrapper = this.props.filteredCreatures.map( //eslint-disable-line
+        const CreatureWrapper = this.props.filteredCreatures.map(
             creature => <CreatureItem 
                 key={creature.title}
                 creatureProp={creature} />)
